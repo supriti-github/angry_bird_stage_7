@@ -46,9 +46,9 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
+    if(backgroundImg){
         background(backgroundImg);
-
+    }
     Engine.update(engine);
     //strokeWeight(4);
     box1.display();
@@ -95,7 +95,7 @@ async function getBackgroundImg()
     var response = await fetch("http://worldclockapi.com/api/json/est/now");
     var responseJSON = await response.json();
     console.log(responseJSON);
-    var datetime = responseJSON.datetime
+    var datetime = responseJSON.currentDateTime;
     //console.log(datetime);
     var hour = datetime.slice(11,13);
     //console.log(hour);
